@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import Questions1 from './Questions1'
+import Questions2 from './Questions2'
 var firebase = require('firebase');
 var uuid = require('uuid')
 
@@ -50,12 +52,13 @@ class IQ extends Component{
 			</div>
 			questions = ''
 		} else if (this.state.username !== '' && this.state.isSubmitted === false )	{
-			username = <h1> Welcome {this.state.username}</h1>
+			username = <div><h1> Welcome {this.state.username}</h1>
+			<Questions1 /></div>
 		}
 
 		return(
 			<div>
-				Initial test
+				{username}
 			</div>
 			)
 	}
